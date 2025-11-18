@@ -13,8 +13,10 @@ public interface RentACat {
 			case SOLUTION:
 				return new RentACatSolution();
 			case MOCK:
-				// TODO: Return a mock object that emulates the behavior of a real object.
-				return null;
+				// I am returning a mock RentACat
+				RentACat mockRAC = mock(RentACat.class);
+				when(mockRAC.listCats()).thenReturn("Mock Cat List");
+				return mockRAC;
 			default:
 				assert (false);
 				return null;
